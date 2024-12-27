@@ -190,7 +190,7 @@ const postHeader = document.getElementById('main-header');
 const Nav = `
 <nav class="blog-nav" id="post-nav">
            <div class="logo-box">
-                    <a href="#">
+                    <a href="#" id='logo'>
                        <img src="assets/img/logo/logo2.png" alt="Logo image">
                     </a>
             </div>
@@ -274,6 +274,15 @@ if (postFooter) {
 const blogFooterClone = blogFooter.cloneNode(true); // Clone the blog footer
 post.appendChild(blogFooterClone); // Append it to the body (outside the container)
 
+// 7.Logo link back to main page
+let logo = document.getElementById('logo');
+
+//add an event listener for click function
+logo.addEventListener('click', (e) =>{
+    blogPage.style.display = 'block';
+    let postPage = document.getElementById('post');
+    postPage.style.display = 'none';
+}); 
 
 // TOGGLE FUNCTIONALITY
 // 1.select elements
